@@ -50,3 +50,9 @@ python manage.py runserver
 
 # Tarayıcıda görüntüleme:
 # http://127.0.0.1:8000/
+
+## Notlar
+Bu proje tamamen demo amaçlıdır. Ticari bir ürün değildir. Canlıya alınması planlanmamaktadır.
+
+## Lisans
+Bu projede henüz lisans tanımlanmamıştır.
