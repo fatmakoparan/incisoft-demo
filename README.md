@@ -1,6 +1,6 @@
 # Incisoft Demo
 
-## Project Overview (English)
+### Project Overview (English)
 **Incisoft Demo** is a web application developed using Python and Django. The project includes both **backend** and **frontend** components, and uses **PostgreSQL** as its database.  
 
 - **Blog Application:** Allows users to create and view blog posts.  
@@ -12,18 +12,18 @@ git clone <project-repo-link>
 cd incisoft_demo
 cd incisoft_project
 ```
-# Create and activate virtual environment
-# Windows
+### Create and activate virtual environment
+### Windows
 ```bash
 python -m venv venv
 venv\Scripts\activate
 ```
-# Linux / macOS
+### Linux / macOS
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
-# Install dependencies
+### Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
@@ -41,20 +41,20 @@ DATABASES = {
 }
 ```
 
-# Apply migrations
+### Apply migrations
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
-# Create superuser (optional)
+### Create superuser (optional)
 ```bash
 python manage.py createsuperuser
 ```
-# Run project
+### Run project
 ```bash
 python manage.py runserver
 ```
-# View in browser
+### View in browser
 ```bash
 http://127.0.0.1:8000/
 
@@ -63,31 +63,31 @@ http://127.0.0.1:8000/
 
 # Incisoft Demo
 
-## Proje Hakkında
+### Proje Hakkında
 **Incisoft Demo**, Python ve Django kullanılarak geliştirilmiş bir web uygulamasıdır. Projede hem **backend** hem de **frontend** bileşenleri bulunmaktadır. Veritabanı olarak **PostgreSQL** kullanılmıştır.  
 
 - **Blog Uygulaması:** Kullanıcılar blog yazıları oluşturabilir ve görüntüleyebilir.  
 - **Contact Uygulaması:** Ziyaretçiler isim, e-posta, telefon ve mesaj bilgilerini bırakarak iletişim kurabilir.  
 
-## Kurulum ve Çalıştırma
+### Kurulum ve Çalıştırma
 ```bash
 # 1. Projeyi klonlayın ve proje klasörüne girin
 git clone <proje-repo-linki>
 cd incisoft_demo
 cd incisoft_project  # Django ana proje klasörüne geçin
 ```
-# 2. Sanal ortam oluşturun ve aktive edin
-# Windows
+### 2. Sanal ortam oluşturun ve aktive edin
+### Windows
 ```bash
 python -m venv venv
 venv\Scripts\activate
 ```
-# Linux / macOS
+### Linux / macOS
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
-# 3. Bağımlılıkları yükleyin
+### 3. Bağımlılıkları yükleyin
 ```bash
 pip install -r requirements.txt
 ```
@@ -105,20 +105,20 @@ DATABASES = {
     }
 }
 ```
-# 5. Veritabanı migrasyonlarını uygulayın
+### 5. Veritabanı migrasyonlarını uygulayın
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
-# 6. Süper kullanıcı oluşturun (opsiyonel)
+### 6. Süper kullanıcı oluşturun (opsiyonel)
 ```bash
 python manage.py createsuperuser
 ```
-# 7. Projeyi çalıştırın
+### 7. Projeyi çalıştırın
 ```bash
 python manage.py runserver
 ```
-# Tarayıcıda görüntüleme:
+### Tarayıcıda görüntüleme:
 ```bash
 # http://127.0.0.1:8000/
 ```
