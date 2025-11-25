@@ -27,17 +27,19 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
-# Configure database (update settings.py)
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': '<database_name>',
-#         'USER': '<username>',
-#         'PASSWORD': '<password>',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
+### Configure database (update settings.py)
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'incisoft_db',        # kendi veritabanı adın
+        'USER': 'postgres',           # kendi kullanıcı adın
+        'PASSWORD': '123456',         # kendi şifren
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+```
 
 # Apply migrations
 ```bash
@@ -89,19 +91,20 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
-# 4. Veritabanı ayarlarını yapın
-# incisoft_project/settings.py dosyasında PostgreSQL bağlantısını güncelleyin:
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': '<veritabani_adi>',
-#         'USER': '<kullanici_adi>',
-#         'PASSWORD': '<sifre>',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
-
+### 4. Veritabanı ayarlarını yapın
+### incisoft_project/settings.py dosyasında PostgreSQL bağlantısını güncelleyin:
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'incisoft_db',        # kendi veritabanı adın
+        'USER': 'postgres',           # kendi kullanıcı adın
+        'PASSWORD': '123456',         # kendi şifren
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+```
 # 5. Veritabanı migrasyonlarını uygulayın
 ```bash
 python manage.py makemigrations
