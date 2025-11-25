@@ -16,7 +16,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -26,11 +25,9 @@ SECRET_KEY = 'django-insecure-9#p24ajx7o04jy(46+up7+=y578icg&@7n*awc=d2+(7u#5%1o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myproject',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +54,7 @@ ROOT_URLCONF = 'myproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # templates dizinini ekledik
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # templates dizini
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,21 +69,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'myproject.wsgi.application'
 
-
 # Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'incisoft',
+        'USER': 'postgres',
+        'PASSWORD': '0123',  # PostgreSQL şifreni kontrol ederek gir
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
-
 # Password validation
-# https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -101,35 +97,28 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
-# https://docs.djangoproject.com/en/5.1/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.1/howto/static-files/
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / "static"]  # Tek bir tanım, tekrarları kaldırdık
 
+# Media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
-
-STATIC_URL = '/static/'  # Statik dosyalar için URL yolu
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # Statik dosyalar projenin ana dizininde olabilir
-]
-BASE_DIR = Path(__file__).resolve().parent.parent  # Proje kök dizini
-
-MEDIA_URL = '/media/'  # Medya dosyaları için URL yolu
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Medya dosyalarının saklanacağı dizin
-
+# E-posta ayarları (Gmail SMTP)
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'johndoe@gmail.com'  # Kendi Gmail adresinize göre ayarlayiniz
+EMAIL_HOST_PASSWORD = '00000000'  # 16 haneli uygulama şifresini kontrol ederek yaziniz
+DEFAULT_FROM_EMAIL = 'johndoe@gmail.com'
 
 # Default primary key field type
-# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

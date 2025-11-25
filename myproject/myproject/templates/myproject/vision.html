@@ -1,6 +1,7 @@
 {% extends 'base_generic.html' %}
 {% load static %}
 
+{% block title %}Vizyonumuz{% endblock %}
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -30,63 +31,38 @@
             width: 100%; /* Resmin genişliği tam ekran */
             height: auto; /* Yükseklik oranını korur */
          }
-.carousel-caption {
-    position: absolute;
-    top: 30%; /* Yazıyı yukarı çeker */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    width: 80%; /* Daha iyi hizalama için genişlik */
-    background: rgba(0, 0, 0, 0.5); /* Arka plan rengi (şeffaf siyah) */
-    padding: 20px; /* İç boşluk */
-    border-radius: 10px; /* Köşe yuvarlatma */
-}
-
-
-
       </style>
    </head>
    <body>
       {% block content %}
-      <main>
-         <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-               <!-- İlk slayt, aktif olmalı -->
-               <div class="carousel-item active">
-                  <div class="slide-content__image-container">
-                     <img class="slide-content__image" src="{% static 'images/vision_arkaplan.png' %}" alt="Vizyon & Misyon" width="2000" height="1000">
 
-                  </div>
-                  <div class="carousel-caption d-none d-md-block">
-                     <h5 style="font-size: 60px !important; margin-top: -150px; line-height: 1.2; text-align: center; position: relative; top: -315px; color: #01407a; ">Vizyonumuz</h5>
-                     <p style="font-size: 30px !important; margin-top: -20px; line-height: 1.5; text-align: center; width: 80%; margin-left: auto; margin-right: auto; position: relative; top: -270px; color: #000000; ">Şirketimiz, dijital dünyada yenilikçi çözümler üreterek, iş süreçlerini dönüştürmek ve sektöründeki liderliğini pekiştirmek için sürekli gelişen bir vizyonla hareket etmektedir. </p>
+<!-- Carousel Section -->
+<main class="carousel-section">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <!-- İlk slayt, aktif olmalı -->
+      <div class="carousel-item active">
+        <div class="slide-content__image-container">
+          <img class="slide-content__image" src="{% static 'images/vizyonumuz.png' %}" alt="Vizyon" style="width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; aspect-ratio: 1035 / 557; position: relative;">
+        </div>
+      </div>
+      <!-- Diğer slaytlar -->
+      <div class="carousel-item">
+        <div class="slide-content__image-container">
+        <img class="slide-content__image" src="{% static 'images/misyonumuz.png' %}" alt="Misyon" style="width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; aspect-ratio: 1035 / 557; position: relative;">        </div>
+      </div>
 
-                  </div>
-               </div>
-               <!-- Diğer slaytlar -->
-               <div class="carousel-item">
-                  <div class="slide-content__image-container">
-                     <img class="slide-content__image" src="{% static 'images/vision_arkaplan.png' %}" alt="Hizmetlerimiz"width="2000" height="1000">
-                  </div>
-                  <div class="carousel-caption d-none d-md-block">
-                      <h5 style="font-size: 60px !important; margin-top: -150px; line-height: 1.2; text-align: center; position: relative; top: -315px; color: #01407a;">Misyonumuz</h5>
-                     <p style="font-size: 30px !important; margin-top: -20px; line-height: 1.5; text-align: center; width: 80%; margin-left: auto; margin-right: auto; position: relative; top: -270px; color: #000000;">Misyonumuz, işletmelere gelişmiş teknolojilerle hız ve verimlilik kazandırarak rekabet avantajı sağlamaktır.
-                         Biz, her projede müşteri odaklılık ilkesini benimseyerek, yenilikçi çözümler sunar ve işletmelerin dijital dönüşüm süreçlerinde onlara yol gösteririz. </p>
-
-                  </div>
-               </div>
-
-            </div>
-<!-- Carousel Kontrolleri -->
-<button class="carousel-control-prev" type="button" data-target="#myCarousel" data-slide="prev">
-   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-</button>
-<button class="carousel-control-next" type="button" data-target="#myCarousel" data-slide="next">
-   <span class="carousel-control-next-icon" aria-hidden="true"></span>
-</button>
-         </div>
-      </main>
+    </div>
+    <!-- Carousel Kontrolleri -->
+    <button class="carousel-control-prev" type="button" data-target="#myCarousel" data-slide="prev" style="background-color: #E7E7E7; opacity: 1;">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>,
+    </button>
+    <button class="carousel-control-next" type="button" data-target="#myCarousel" data-slide="next" style="background-color: #E7E7E7; opacity: 1;">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </button>
+  </div>
+</main>
       {% endblock %}
 
       <!-- jQuery ve Bootstrap 4.1.0 JS -->
@@ -94,24 +70,22 @@
       <script src="{% static 'js/popper.min.js' %}"></script> <!-- Popper.js -->
       <script src="{% static 'js/bootstrap.min.js' %}"></script> <!-- Bootstrap JS -->
 
-<script>
-$(document).ready(function() {
-   $('#myCarousel').carousel({
-      interval: 5000, // Slayt geçiş süresi (5 saniye)
-      wrap: true // Döngüsel geçişi aktif hale getirir
-   });
+      <script>
+      $(document).ready(function() {
+         $('#myCarousel').carousel({
+            interval: 5000, // Slayt geçiş süresi (5 saniye)
+            wrap: true // Döngüsel geçişi aktif hale getirir
+         });
 
-   // Butonlara tıklanınca slayt değiştirme
-   $('.carousel-control-prev').on('click', function() {
-      $('#myCarousel').carousel('prev');
-   });
+         // Butonlara tıklanınca slayt değiştirme
+         $('.carousel-control-prev').on('click', function() {
+            $('#myCarousel').carousel('prev');
+         });
 
-   $('.carousel-control-next').on('click', function() {
-      $('#myCarousel').carousel('next');
-   });
-});
-
-</script>
-
+         $('.carousel-control-next').on('click', function() {
+            $('#myCarousel').carousel('next');
+         });
+      });
+      </script>
    </body>
 </html>

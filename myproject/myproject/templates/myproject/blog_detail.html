@@ -1,0 +1,60 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+
+{% block title %}{{ blog.title }}{% endblock %}
+
+{% block content %}
+<style>
+    .blog-container {
+        max-width: 900px;
+        margin: 60px auto;
+        padding: 0 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .blog-cover-image {
+        width: 100%;
+        max-height: 450px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .blog-title {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #222;
+        text-align: left;
+    }
+
+    .blog-date {
+        font-size: 14px;
+        color: #888;
+        margin-bottom: 30px;
+        text-align: left;
+    }
+
+    .blog-content {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #444;
+        text-align: justify;
+    }
+</style>
+
+<div class="blog-container">
+    {% if blog.image %}
+        <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="blog-cover-image">
+    {% else %}
+        <img src="{% static 'images/default_blog_cover.jpg' %}" alt="Blog Cover" class="blog-cover-image">
+    {% endif %}
+
+    <h1 class="blog-title">{{ blog.title }}</h1>
+    <div class="blog-date">{{ blog.created_at|date:"d F Y" }}</div>
+    <div class="blog-content">
+        {{ blog.content|safe }}
+    </div>
+</div>
+{% endblock %}
