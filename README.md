@@ -11,19 +11,22 @@
 git clone <project-repo-link>
 cd incisoft_demo
 cd incisoft_project
-
+```
 # Create and activate virtual environment
 # Windows
+```bash
 python -m venv venv
 venv\Scripts\activate
-
+```
 # Linux / macOS
+```bash
 python3 -m venv venv
 source venv/bin/activate
-
+```
 # Install dependencies
+```bash
 pip install -r requirements.txt
-
+```
 # Configure database (update settings.py)
 # DATABASES = {
 #     'default': {
@@ -37,23 +40,23 @@ pip install -r requirements.txt
 # }
 
 # Apply migrations
+```bash
 python manage.py makemigrations
 python manage.py migrate
-
+```
 # Create superuser (optional)
+```bash
 python manage.py createsuperuser
-
+```
 # Run project
+```bash
 python manage.py runserver
+```
+# View in browser
+```bash
+http://127.0.0.1:8000/
 
-# View in browser: http://127.0.0.1:8000/
-
-
-
-
-
-
-
+```
 
 
 # Incisoft Demo
@@ -70,19 +73,22 @@ python manage.py runserver
 git clone <proje-repo-linki>
 cd incisoft_demo
 cd incisoft_project  # Django ana proje klasörüne geçin
-
+```
 # 2. Sanal ortam oluşturun ve aktive edin
 # Windows
+```bash
 python -m venv venv
 venv\Scripts\activate
-
+```
 # Linux / macOS
+```bash
 python3 -m venv venv
 source venv/bin/activate
-
+```
 # 3. Bağımlılıkları yükleyin
+```bash
 pip install -r requirements.txt
-
+```
 # 4. Veritabanı ayarlarını yapın
 # incisoft_project/settings.py dosyasında PostgreSQL bağlantısını güncelleyin:
 # DATABASES = {
@@ -97,18 +103,22 @@ pip install -r requirements.txt
 # }
 
 # 5. Veritabanı migrasyonlarını uygulayın
+```bash
 python manage.py makemigrations
 python manage.py migrate
-
+```
 # 6. Süper kullanıcı oluşturun (opsiyonel)
+```bash
 python manage.py createsuperuser
-
+```
 # 7. Projeyi çalıştırın
+```bash
 python manage.py runserver
-
+```
 # Tarayıcıda görüntüleme:
+```bash
 # http://127.0.0.1:8000/
-
+```
 
 **Notlar**  
 Bu proje tamamen demo amaçlıdır. Ticari bir ürün değildir. Canlıya alınması planlanmamaktadır.
